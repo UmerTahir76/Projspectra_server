@@ -23,11 +23,10 @@ const serviceAccount = {
 };
 
 
-// Cloudinary config
 cloudinary.config({
-  cloud_name: "dzqonzhli",
-  api_key: "964771998452298",
-  api_secret: "fS-exIyxH706tYEci4Bg9SdCxv4", // safe on server, not frontend
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET, // safe on server
 });
 
 const app = express();
@@ -191,4 +190,4 @@ app.post("/updateProject", async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+//app.listen(5000, () => console.log("Server running on port 5000"));
